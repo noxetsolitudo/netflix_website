@@ -1,0 +1,277 @@
+////////////////////////////////////////
+////////!!!Use clamp on everything!!!///
+////////////////////////////////////////
+
+@import 'config';
+@import 'buttons';
+@import 'utilities';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $primary-color;
+  color: $terciary-color;
+  font-family: $font-stack;
+  font-weight: 200;
+
+  a {
+    text-decoration: none;
+    color: $terciary-color;
+  }
+
+  .container {
+    max-width: $max-width;
+    // width: 80%;//adding only if I want to be border flexible and dependant on the width of the browser window
+    margin: auto;
+    overflow: hidden;
+  }
+
+  h1 {
+    font-size: clamp(1.25rem, calc(5vw + 0.15rem), 4rem);
+  }
+
+  h2 {
+    font-size: clamp(1.25rem, calc(2vw + 0.15rem), 2rem);
+    font-weight: 300;
+  }
+
+  h3 {
+    font-size: clamp(1.5rem, calc(3vw + 0.15rem), 4rem);
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 1.125rem;
+  }
+
+  // Border break
+  hr {
+    border: 4px $grey01 solid;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  //formatting of email input area, it repeats twice so it is above all structure
+  .email-input-and-start {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    input {
+      max-width: 600px;
+      width: 90%;
+      // flex-shrink: 0;
+      height: clamp(3rem, calc(5vw + 0.25rem), 4rem);
+      outline: none;
+      text-indent: 15px; //move cursor in the search box to the right
+
+      &::-webkit-input-placeholder {
+        font-size: clamp(0.125rem, calc(3vw + 0.1rem), 1rem);
+      }
+
+      &:focus {
+        border: 1px $blue01 solid;
+      }
+
+      margin-bottom: 1rem;
+    }
+
+    //get started button additional formating
+    a {
+      font-size: 1rem;
+      padding: 0.7rem 1.25rem;
+      border-radius: 0.2rem;
+
+      i {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  // Header
+  header {
+    height: 650px;
+    background: radial-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
+      url('/images/netflix_background.jpg') no-repeat center center/cover;
+
+    .header-top {
+      margin: 2rem;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: space-between;
+      img {
+        width: clamp(1rem, calc(20vw + 0.1rem), 10rem);
+      }
+      a {
+        font-size: clamp(0.8rem, calc(2vw + 0.1rem), 1.25rem);
+      }
+    }
+
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin-top: 8rem;
+    }
+  }
+  // Showcases
+  #showcase01,
+  #showcase02,
+  #showcase03 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    margin-bottom: 3rem;
+
+    h3 {
+      margin-bottom: 1rem;
+    }
+    .showcase01-text,
+    .showcase02-text,
+    .showcase03-text,
+    .showcase04-text {
+      margin-bottom: 2rem;
+    }
+
+    video {
+      max-width: 375px;
+      margin: 1rem;
+    }
+  }
+
+  #showcase04 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    // align-items: center;
+    margin: 2rem;
+    margin-bottom: 3rem;
+
+    .showcase04-text {
+      li {
+        // formatting of the list links
+        a {
+          display: flex;
+          justify-content: space-between;
+          background-color: $grey02;
+          padding: 1rem;
+          margin: 0.5rem;
+        }
+      }
+    }
+  }
+
+  //Footer
+  #main-footer {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: space-around;
+
+    color: $grey03;
+    margin: 2rem;
+    a {
+      color: $grey03;
+      font-size: 0.8rem;
+    }
+    h3 {
+      font-weight: 100;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+
+    .items {
+      margin-bottom: 2rem;
+      li {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        a {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    .lang-drop-down-menu {
+      margin-bottom: 3rem;
+
+      a {
+        font-size: 1rem;
+        border: 1px $grey03 solid;
+        border-radius: 0.15rem;
+        padding: 0.85rem;
+        .fa-globe {
+          margin-right: 1rem;
+        }
+        .fa-chevron-down {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 500px) {
+    //Footer
+    #main-footer {
+      .items {
+        li {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    }
+  }
+  @media (min-width: 740px) {
+    //Footer
+    #main-footer {
+      .items {
+        li {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    }
+  }
+  @media (min-width: 900px) {
+    #showcase01,
+    #showcase02,
+    #showcase03 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      text-align: left;
+      .showcase01-text {
+        flex: 1;
+      }
+      video {
+        flex: 1;
+      }
+    }
+
+    //Change of the order of the flex items, text swaps with the video
+    #showcase02 {
+      :first-child {
+        order: 2;
+      }
+      :last-child {
+        order: 1;
+      }
+    }
+  }
+}

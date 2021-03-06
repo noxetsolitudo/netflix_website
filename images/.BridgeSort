@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<dirinfo>
+<stack version='1' expanded='true' framerate='2.0' framerateCS6='2.0' >
+<files>
+	<item key='slide01.png20201117104510' />
+	<item key='slide02.png20201117104524' />
+	<item key='slide03.png20201117104537' />
+	<item key='slide04.png20201117104547' />
+	<item key='slide05.png20201117104557' />
+	<item key='slide06.png20201117104607' />
+	<item key='slide07.png20201117104616' />
+</files>
+<properties>
+	<property key='@collectiontype' value='panorama' type='0' />
+	<property key='@timestamp' value='Tue Nov 17 2020 10:50:50 GMT+0100' type='0' />
+</properties>
+</stack>
+</dirinfo>
